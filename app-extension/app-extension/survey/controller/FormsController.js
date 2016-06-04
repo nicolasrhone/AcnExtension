@@ -15,7 +15,7 @@
 
 Ext.define('Rubedo.controller.FormsController', {
     extend: 'Ext.app.Controller',
-    alias: 'controller.AcnController',
+    alias: 'controller.FormsController',
 
     onAddFormBtnClick: function(button, e, eOpts) {
         Ext.widget("newFormWindow").show();
