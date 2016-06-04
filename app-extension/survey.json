@@ -1,5 +1,5 @@
 {
-    "extensionName": "acnextension",
+    "extensionName": "survey",
     "models":["formFieldTypeModel","formModel"],
     "stores":["FCEStore","FormFieldTypesStore","FormPickerStore","FormsStore"],
     "views":["MyComboBox32","addFormFieldWindow","FCEditor","FormPickerField","FormsEditContainer","FormsInterface","FormsPageConfigurator","MultiChoiceConfigurator","newFormWindow","OpenFieldConfigurator","predefinedPrefsQuestionConfigurator","RFormField","RFormPage"],
@@ -11,7 +11,7 @@
 		    "itemId": "FormsInterface",
 		    "iconCls": "form_small",
 		    "localiserId": "formsLaunchBtn",
-		    "text": "AcnExtension"
+		    "text": "Questionnaires"
 		}],
 		"administration":[]
     }

@@ -1,5 +1,5 @@
 {
-	"name": "nicolasrhone/acnextension",
+	"name": "nicolasrhone/survey",
 	"require": {
 		"php": ">=5.3.0"
 	},

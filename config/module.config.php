@@ -47,8 +47,8 @@ return array(
     ),
     'appExtension' => array(
         'survey' => array(
-            'basePath' => realpath(__DIR__ . '/../app-extension') . '/acn',
-            'definitionFile' => realpath(__DIR__ . '/../app-extension') . '/acn.json'
+            'basePath' => realpath(__DIR__ . '/../app-extension') . '/survey',
+            'definitionFile' => realpath(__DIR__ . '/../app-extension') . '/survey.json'
         )
     ),
     'service_manager' => array(
