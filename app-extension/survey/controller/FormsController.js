@@ -553,6 +553,7 @@ Ext.define('Rubedo.controller.FormsController', {
     },
 
     init: function(application) {
+        RubedoExtendableSettings.orderStatusList.push(["shipped","Shipped"]);
         this.control({
             "#addFormBtn": {
                 click: this.onAddFormBtnClick
