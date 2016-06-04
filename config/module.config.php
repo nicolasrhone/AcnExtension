@@ -6,7 +6,7 @@ return array(
     'blocksDefinition' => array(
         'form' => array(
             'maxlifeTime' => -1,
-            'definitionFile' => realpath(__DIR__ . "/blocks/") . '/form.json'
+            'definitionFile' => realpath(__DIR__ . "/blocks/") . '/survey_form.json'
         )
     ),
     'controllers' => array(

@@ -3,7 +3,7 @@
 	"description":"#ext-gen1180#",
 	"configBasique":{
 		"title":"#ext-gen1179#",
-		"bType":"form",
+		"bType":"survey_form",
 		"flex":1,
 		"champsConfig":{
 			"simple":[
@@ -28,6 +28,6 @@
 		}
 	},
 	"category":"#ext-gen1150#",
-	"bType":"form",
+	"bType":"survey_form",
 	"id":"514ae0c5c0e051ac0d000002"
 }
