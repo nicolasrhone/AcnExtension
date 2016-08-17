@@ -479,6 +479,24 @@ Ext.define('Rubedo.controller.FormsController', {
     	        }
     	    });
     	}
+
+        var genericStructureString = response.responseText;
+        Ext.Ajax.request({
+            url: 'app/appextensions/survey/localization/locale/'+userLanguage+'/ccnFieldLabels.json',
+            params: {
+
+            },
+            success: function(response){
+                var singletonUpdates = Ext.JSON.decode(response.responseText);
+                Ext.add(Rubedo.RubedoAutomatedElementsLoc, singletonUpdates);
+
+
+            },
+            failure:function(){
+                console.log("Echec ! could not be localised for this language");
+            }
+
+        });
         var newField={
             "type": "Quizz",
             "cType": "Rubedo.view.FormPickerField",
