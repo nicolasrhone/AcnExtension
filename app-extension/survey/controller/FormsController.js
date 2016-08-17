@@ -488,7 +488,7 @@ Ext.define('Rubedo.controller.FormsController', {
             },
             success: function(response){
                 var singletonUpdates = Ext.JSON.decode(response.responseText);
-                Ext.add(Rubedo.RubedoAutomatedElementsLoc, singletonUpdates);
+                Ext.apply(Rubedo.RubedoAutomatedElementsLoc, singletonUpdates);
 
 
             },
