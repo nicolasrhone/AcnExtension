@@ -480,7 +480,7 @@ Ext.define('Rubedo.controller.FormsController', {
     	    });
     	}
 
-        //var genericStructureString = response.responseText;
+        //modification du label e-commerce "Tarif par commande"
         Ext.Ajax.request({
             url: 'app/appextensions/survey/localization/locale/'+userLanguage+'/ccnFieldLabels.json',
             params: {
