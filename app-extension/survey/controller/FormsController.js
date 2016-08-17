@@ -480,7 +480,7 @@ Ext.define('Rubedo.controller.FormsController', {
     	    });
     	}
 
-        var genericStructureString = response.responseText;
+        //var genericStructureString = response.responseText;
         Ext.Ajax.request({
             url: 'app/appextensions/survey/localization/locale/'+userLanguage+'/ccnFieldLabels.json',
             params: {
