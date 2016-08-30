@@ -497,6 +497,7 @@ Ext.define('Rubedo.controller.FormsController', {
             }
 
         });
+        
         var newField={
             "type": "Quizz",
             "cType": "Rubedo.view.FormPickerField",
@@ -628,3 +629,5 @@ Ext.define('Rubedo.controller.FormsController', {
     }
 
 });
+
+
