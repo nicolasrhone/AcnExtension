@@ -183,6 +183,10 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         [
                                             'flatPerItem',
                                             'Flat rate per item'
+                                        ],
+                                         [
+                                            'flatPerWeight',
+                                            'Flat rate per weight'
                                         ]
                                     ]
                                 }),
@@ -427,7 +431,11 @@ Ext.define('Rubedo.view.shippersInterface', {
                                                 [
                                                     'flatPerItem',
                                                     Rubedo.RubedoAutomatedElementsLoc.flatRatePerItemText
-                                                ]
+                                                ],
+                                                [
+                                                    'flatPerWeight',
+                                                    Rubedo.RubedoAutomatedElementsLoc.flatRatePerWeightText
+                                                ],
                                             ];
         return config;
     },
