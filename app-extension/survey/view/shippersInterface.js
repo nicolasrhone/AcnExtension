@@ -255,9 +255,20 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
-                                    localiserId: 'limitCol',
-                                    dataIndex: 'limit',
-                                    text: 'Limit (kg)',
+                                    localiserId: 'limitMinCol',
+                                    dataIndex: 'limitMin',
+                                    text: 'Min (kg)',
+                                    editor: {
+                                        xtype: 'numberfield',
+                                        allowBlank: true,
+                                        minValue: 0
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    localiserId: 'limitMaxCol',
+                                    dataIndex: 'limitMax',
+                                    text: 'Max (kg)',
                                     editor: {
                                         xtype: 'numberfield',
                                         allowBlank: true,

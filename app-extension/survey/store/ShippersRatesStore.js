@@ -34,7 +34,10 @@ Ext.define('Rubedo.store.ShippersRatesStore', {
                     name: 'rate'
                 },
                 {
-                    name: 'limit'
+                    name: 'limitMin'
+                },
+                {
+                    name: 'limitMax'
                 },
                 {
                     name: 'delay'
