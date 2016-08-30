@@ -260,7 +260,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     text: 'Limit (kg)',
                                     editor: {
                                         xtype: 'numberfield',
-                                        allowBlank: false,
+                                        allowBlank: true,
                                         minValue: 0
                                     }
                                 },
@@ -472,7 +472,7 @@ Ext.define('Rubedo.view.shippersInterface', {
     },
 
     onButtonClick: function(button, e, eOpts) {
-        button.up().up().getStore().add({"country":"FR","rate":0,"tax":0,"delay":1,"hRDelay":1,"hRUnit":"days"});
+        button.up().up().getStore().add({"country":"FR","rate":0,"tax":0,"limit":0,"delay":1,"hRDelay":1,"hRUnit":"days"});
     },
 
     onRemoveShipperRateBtnClick: function(button, e, eOpts) {
