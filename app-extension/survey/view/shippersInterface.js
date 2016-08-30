@@ -251,6 +251,17 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    localiserId: 'limitCol',
+                                    dataIndex: 'limit',
+                                    text: 'Limit (kg)',
+                                    editor: {
+                                        xtype: 'numberfield',
+                                        allowBlank: false,
+                                        minValue: 0
+                                    }
+                                },
+                                {
+                                    xtype: 'gridcolumn',
                                     localiserId: 'delayCol',
                                     dataIndex: 'delay',
                                     text: 'Delay (days)',
