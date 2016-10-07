@@ -53,7 +53,7 @@ Ext.define('Rubedo.view.CKEField', {
             { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
 
 
-            { name: 'styles', items: [  'Format' ] },
+            { name: 'styles', items:  [ 'Styles', 'Format', 'Font' ]},
             { name: 'colors', items: [ 'TextColor' ] },
             { name: 'tools', items: [ 'Maximize', '-','ShowBlocks' ] },
             { name: 'links', items: [ 'Link', "Rubedolink", 'Unlink','-','Anchor' ] },
