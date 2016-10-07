@@ -67,7 +67,7 @@ Ext.define('Rubedo.view.CKEField', {
                 { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
                 { name: 'colors', items: [ 'TextColor','-', 'Scayt' ] },
                 { name: 'styles', items: [ 'Styles', 'Format' ] },
-                { name: 'insert', items: [ 'Image',  '-','Link', "Rubedolink", 'Unlink'] },
+                { name: 'insert', items: [ 'Image', 'Youtube',  '-','Link', "Rubedolink", 'Unlink'] },
                 { name: 'managing', items: [ 'Maximize','-','Undo', 'Redo', "Source"  ] }
             ];
         } else if (component.CKETBConfig=="Basic"){
@@ -76,7 +76,7 @@ Ext.define('Rubedo.view.CKEField', {
                 { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', '-', 'RemoveFormat' ] },
                 { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote', '-', 'JustifyCenter']},
                 { name: 'colors', items: [ 'TextColor','-', 'Scayt' ] },
-                { name: 'insert', items: [ 'Image'] },
+                { name: 'insert', items: [ 'Image', 'Youtube'] },
                 { name: 'links', items: [ 'Link', "Rubedolink", 'Unlink'] }
 
 
