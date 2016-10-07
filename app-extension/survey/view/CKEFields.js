@@ -111,13 +111,12 @@ Ext.define('Rubedo.view.CKEField', {
             templates_replaceContent : false,
             customConfig: "/theme/cte/ckeditor/config.js",
             language:userLanguage,
-            extraPlugins:'rubedolink,stylesheetparser',
+            extraPlugins:'rubedolink,stylesheetparser,youtube',
             resize_enabled:false,
             filebrowserImageBrowseUrl:"ext-finder?type=Image",
             filebrowserImageUploadUrl:null,
             forcePasteAsPlainText: true,
             font_names : 'Merriweather;Montserrat;FontAwesome; cheminneuf',
-
         });
         component.editor.on("maximize",function(){
             var mainWindow=component.findParentByType("window");
