@@ -103,7 +103,22 @@ Ext.define('Rubedo.view.CKEField', {
         if (Ext.isEmpty(userLanguage)){
             userLanguage='en';
         }
-        component.editor= CKEDITOR.replace(targetId,{toolbar:  myTBConfig, allowedContent:true, contentsCss:"/theme/default/css/rubedo-all.css", language:userLanguage, extraPlugins:'rubedolink,stylesheetparser',resize_enabled:false, filebrowserImageBrowseUrl:"ext-finder?type=Image", filebrowserImageUploadUrl:null});
+        component.editor= CKEDITOR.replace(targetId,{
+            toolbar:  myTBConfig,
+            allowedContent:true,
+            contentsCss:"/theme/cte/ckeditor/styles.css",
+            templates_files: [ '/theme/cte/ckeditor/default.js' ],
+            templates_replaceContent : false,
+            customConfig: "/theme/cte/ckeditor/config.js",
+            language:userLanguage,
+            extraPlugins:'rubedolink,stylesheetparser',
+            resize_enabled:false,
+            filebrowserImageBrowseUrl:"ext-finder?type=Image",
+            filebrowserImageUploadUrl:null,
+            forcePasteAsPlainText: true,
+            font_names : 'Merriweather;Montserrat;FontAwesome; cheminneuf',
+
+        });
         component.editor.on("maximize",function(){
             var mainWindow=component.findParentByType("window");
             if (!Ext.isEmpty(mainWindow)){
