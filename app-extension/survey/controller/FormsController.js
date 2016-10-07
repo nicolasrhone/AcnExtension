@@ -497,7 +497,79 @@ Ext.define('Rubedo.controller.FormsController', {
             }
 
         });
-        
+        /*add labels for block options in BO*/
+        Ext.Ajax.request({
+            url: 'blocks',
+            method:'GET',
+            params: {
+
+            },
+            success: function(response){
+                var genericStructureString = response.responseText;
+                Ext.Ajax.request({
+                    url: '/components/webtales/rubedo-localization/'+userLanguage+'/BackOffice/blockTypeLabels.json',
+                    params: {
+                    },
+                    success: function(response){
+                        var localisedLabels =Ext.JSON.decode(response.responseText);
+                        Ext.Object.each(localisedLabels, function(key, value, myself) {
+                            replacer=new RegExp(key, 'g');
+                            genericStructureString=genericStructureString.replace(replacer, value);
+                        });
+                        /*get ccn labels*/
+                        Ext.Ajax.request({
+                            url: 'app/appextensions/survey/localization/locale/'+userLanguage+'/ccnBlockTypeLabels.json',
+                            params: {
+                            },
+                            success: function(response){
+                                var ccnlocalisedLabels =Ext.JSON.decode(response.responseText);
+                                Ext.Object.each(ccnlocalisedLabels, function(key, value, myself) {
+                                    replacer=new RegExp(key, 'g');
+                                    genericStructureString=genericStructureString.replace(replacer, value);
+                                });
+                                var decodedFT=Ext.JSON.decode(genericStructureString);
+                                Ext.Array.forEach(decodedFT,function(candidateBlock){
+                                    if (Ext.isEmpty(candidateBlock)){
+                                        Ext.Array.remove(decodedFT,candidateBlock);
+                                    }
+                                });
+                                Ext.getStore("BlocsDataStore").removeAll();
+                                Ext.getStore("BlocsDataStore").loadData(decodedFT);
+                                var task6 = new Ext.util.DelayedTask(function(){
+                                    if (!PHPOptions.addECommerce){
+                                        Ext.getStore("BlocsDataStore").filter("isECommerce",false);
+                                    }
+                                });
+                                task6.delay(400);                                
+                            },
+                            failure:function(){
+                                console.log("Blocks store from CCN could not be localised for this language");
+                                var decodedFT=Ext.JSON.decode(genericStructureString);
+                                Ext.Array.forEach(decodedFT,function(candidateBlock){
+                                    if (Ext.isEmpty(candidateBlock)){
+                                        Ext.Array.remove(decodedFT,candidateBlock);
+                                    }
+                                });
+                                Ext.getStore("BlocsDataStore").removeAll();
+                                Ext.getStore("BlocsDataStore").loadData(decodedFT);
+                                var task6 = new Ext.util.DelayedTask(function(){
+                                    if (!PHPOptions.addECommerce){
+                                        Ext.getStore("BlocsDataStore").filter("isECommerce",false);
+                                    }
+                                });
+                                task6.delay(400);                                
+                            }
+                        });
+                    },
+                    failure:function(){
+                        console.log("Blocks store could not be localised for this language");
+                    }
+                });
+            },
+            failure:function(){
+                console.log("Blocks store could not retrieve generic structure");
+            }
+        });
         var newField={
             "type": "Quizz",
             "cType": "Rubedo.view.FormPickerField",
