@@ -228,7 +228,8 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         forceSelection: true,
                                         queryMode: 'local',
                                         store: 'CountriesForShippers',
-                                        valueField: 'alpha-2'
+                                        valueField: 'alpha-2',
+                                        multiSelect: true
                                     }
                                 },
                                 {
