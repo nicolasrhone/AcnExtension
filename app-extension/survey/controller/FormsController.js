@@ -497,6 +497,21 @@ Ext.define('Rubedo.controller.FormsController', {
             }
 
         });
+        /*change componentsLabels*/
+        Ext.Ajax.request({
+            url: 'app/appextensions/survey/localization/locale/'+userLanguage+'/ccnComponentsLabels.json',
+            params: {
+            },
+            success: function(response){
+                var singletonUpdates = Ext.JSON.decode(response.responseText);
+                Ext.apply(Rubedo.RubedoInterfaceLoc, singletonUpdates);
+
+            },
+            failure:function(){
+                console.log("RubedoInterfaceLoc singleton could not be localized for the current language");
+            }
+        });
+        
         /*add labels for block options in BO*/
         Ext.Ajax.request({
             url: 'blocks',
