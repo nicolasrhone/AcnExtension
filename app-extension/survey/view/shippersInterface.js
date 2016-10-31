@@ -214,18 +214,11 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                        var states = Ext.create('Ext.data.Store', {
-                                            fields: ['alpha-2', 'name'],
-                                            data : [
-                                                {"alpha-2":"AL", "name":"Alabama"},
-                                                {"alpha-2":"AK", "name":"Alaska"},
-                                                {"alpha-2":"AZ", "name":"Arizona"}
-                                                //...
-                                            ]
-                                        });
-                                        try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
-                                        return value;
-                                    } },
+                                        
+                                        try {return(Ext.getStore("states").findRecord("alpha-2",value).get("name"));} catch (err){
+                                            return value;
+                                        }
+                                    },
                                     localiserId: 'countryCol',
                                     dataIndex: 'country',
                                     text: 'Country',
@@ -516,6 +509,14 @@ Ext.define('Rubedo.view.shippersInterface', {
     onWorkspacesInterfaceRender: function(component, eOpts) {
         Ext.getStore("Shippers").load();
         Ext.getStore("CountriesForShippers").load();
+        var states = Ext.create('Ext.data.Store', {
+            fields: ['alpha-2', 'name'],
+            data : [
+                {"alpha-2":"AL", "name":"Alabama"},
+                {"alpha-2":"AK", "name":"Alaska"},
+                {"alpha-2":"AZ", "name":"Arizona"}
+            ]
+        });
     },
 
     onWorkspacesInterfaceBeforeClose: function(panel, eOpts) {
