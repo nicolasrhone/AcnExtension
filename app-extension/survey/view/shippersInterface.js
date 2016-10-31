@@ -217,7 +217,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                        /* try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
                                             return value;
                                         }*/
-                                       if (!Ext.isEmpty(value)){
+                                       if (!Ext.isEmpty(Rubedo.RubedoAutomatedElementsLoc[value+"Text"])){
                                             return(Rubedo.RubedoAutomatedElementsLoc[value+"Text"]);
                                         } else return value;
                                     },
@@ -486,10 +486,10 @@ Ext.define('Rubedo.view.shippersInterface', {
     },
     processMyComboBox689: function(config) {
         config.store=[
-                                                    ['France','France'],
-                                            ['Europe','Europe'],
-                                            ['North America','North America']
-                                                ];
+                    ['France','France'],
+            ['Europe','Europe'],
+            ['North America','North America']
+                ];
         return config;
     },
 
