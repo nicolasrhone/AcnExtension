@@ -1,6 +1,6 @@
 {
 	"flatRatePerWeightText":"Tarif par poids de la commande (/kg)",
-	"EuropeText":"Europe",
-	"FranceText":"France",
-	"AmericaText":"North America"
+	"FRText":"Europe",
+	"EUText":"France",
+	"AMText":"North America"
 }
