@@ -223,10 +223,9 @@ Ext.define('Rubedo.view.shippersInterface', {
                                                 //...
                                             ]
                                         });
-                                        //try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
-                                        //return value;
-                                   // }
-                                    },
+                                        try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
+                                        return value;
+                                    } },
                                     localiserId: 'countryCol',
                                     dataIndex: 'country',
                                     text: 'Country',
