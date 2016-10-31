@@ -214,24 +214,35 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                        try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
+                                       /* try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
                                             return value;
-                                        }
+                                        }*/
+                                       if (!Ext.isEmpty(value)){
+                                            return(Rubedo.RubedoAutomatedElementsLoc[value+"Text"]);
+                                        } else return value;
                                     },
                                     localiserId: 'countryCol',
                                     dataIndex: 'country',
                                     text: 'Country',
-                                    editor: {
+                                    editor: me.processMyComboBox689({
                                         xtype: 'combobox',
                                         allowBlank: false,
-                                        displayField: 'name',
+                                        //displayField: 'name',
                                         forceSelection: true,
                                         queryMode: 'local',
-                                        store: 'CountriesForShippers',
-                                        valueField: 'alpha-2',
-                                        multiSelect: true
-                                    }
+                                        //store: 'CountriesForShippers',
+                                        //valueField: 'alpha-2',
+                                        multiSelect: false,
+                                        store: [
+                                            ['France','France'],
+                                            ['Europe','Europe'],
+                                            ['North America','North America']
+                                        ]
+                                    })
                                 },
+                                
+                                
+                               
                                 {
                                     xtype: 'gridcolumn',
                                     localiserId: 'priceCol',
@@ -470,6 +481,14 @@ Ext.define('Rubedo.view.shippersInterface', {
                                                         'months',
                                                         Rubedo.RubedoAutomatedElementsLoc.monthsText
                                                     ]
+                                                ];
+        return config;
+    },
+    processMyComboBox689: function(config) {
+        config.store=[
+                                                    ['France','France'],
+                                            ['Europe','Europe'],
+                                            ['North America','North America']
                                                 ];
         return config;
     },
