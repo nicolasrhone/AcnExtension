@@ -214,9 +214,18 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                        try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
-                                        return value;
-                                    }
+                                        var states = Ext.create('Ext.data.Store', {
+                                            fields: ['alpha-2', 'name'],
+                                            data : [
+                                                {"alpha-2":"AL", "name":"Alabama"},
+                                                {"alpha-2":"AK", "name":"Alaska"},
+                                                {"alpha-2":"AZ", "name":"Arizona"}
+                                                //...
+                                            ]
+                                        });
+                                        //try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
+                                        //return value;
+                                   // }
                                     },
                                     localiserId: 'countryCol',
                                     dataIndex: 'country',
@@ -227,7 +236,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         displayField: 'name',
                                         forceSelection: true,
                                         queryMode: 'local',
-                                        store: 'CountriesForShippers',
+                                        store: 'states',
                                         valueField: 'alpha-2',
                                         multiSelect: true
                                     }
