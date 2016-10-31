@@ -486,9 +486,9 @@ Ext.define('Rubedo.view.shippersInterface', {
     },
     processMyComboBox69: function(config) {
         config.store=[
-                ['FR',Rubedo.RubedoAutomatedElementsLoc.FranceText],
-                ['EU',Rubedo.RubedoAutomatedElementsLoc.EuropeText],
-                ['AM',Rubedo.RubedoAutomatedElementsLoc.AmericaText]
+                ['FR',Rubedo.RubedoAutomatedElementsLoc.FRText],
+                ['EU',Rubedo.RubedoAutomatedElementsLoc.EUText],
+                ['AM',Rubedo.RubedoAutomatedElementsLoc.AMText]
             ];
         return config;
     },
