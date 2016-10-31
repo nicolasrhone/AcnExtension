@@ -228,15 +228,16 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         xtype: 'combobox',
                                         allowBlank: false,
                                         //displayField: 'name',
+                                        allowOnlyWhitespace: false,
                                         forceSelection: true,
                                         queryMode: 'local',
                                         //store: 'CountriesForShippers',
                                         //valueField: 'alpha-2',
                                         //multiSelect: false,
                                         store: [
-                                            ['France','France'],
-                                            ['Europe','Europe'],
-                                            ['America','North America']
+                                            ['FR','France'],
+                                            ['EU','Europe'],
+                                            ['AM','North America']
                                         ]
                                     })
                                 },
@@ -464,30 +465,30 @@ Ext.define('Rubedo.view.shippersInterface', {
 
     processMyComboBox68: function(config) {
         config.store=[
-                                                    [
-                                                        'hours',
-                                                        Rubedo.RubedoAutomatedElementsLoc.hoursText
-                                                    ],
-                                                    [
-                                                        'days',
-                                                        Rubedo.RubedoAutomatedElementsLoc.daysText
-                                                    ],
-                                                    [
-                                                        'weeks',
-                                                        Rubedo.RubedoAutomatedElementsLoc.weeksText
-                                                    ],
-                                                    [
-                                                        'months',
-                                                        Rubedo.RubedoAutomatedElementsLoc.monthsText
-                                                    ]
-                                                ];
+            [
+                'hours',
+                Rubedo.RubedoAutomatedElementsLoc.hoursText
+            ],
+            [
+                'days',
+                Rubedo.RubedoAutomatedElementsLoc.daysText
+            ],
+            [
+                'weeks',
+                Rubedo.RubedoAutomatedElementsLoc.weeksText
+            ],
+            [
+                'months',
+                Rubedo.RubedoAutomatedElementsLoc.monthsText
+            ]
+        ];
         return config;
     },
     processMyComboBox69: function(config) {
         config.store=[
-                ['France',Rubedo.RubedoAutomatedElementsLoc.FranceText],
-                ['Europe',Rubedo.RubedoAutomatedElementsLoc.EuropeText],
-                ['North America',Rubedo.RubedoAutomatedElementsLoc.AmericaText]
+                ['FR',Rubedo.RubedoAutomatedElementsLoc.FranceText],
+                ['EU',Rubedo.RubedoAutomatedElementsLoc.EuropeText],
+                ['AM',Rubedo.RubedoAutomatedElementsLoc.AmericaText]
             ];
         return config;
     },
