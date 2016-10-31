@@ -224,7 +224,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                     localiserId: 'countryCol',
                                     dataIndex: 'country',
                                     text: 'Country',
-                                    editor: me.processMyComboBox689({
+                                    editor: me.processMyComboBox69({
                                         xtype: 'combobox',
                                         allowBlank: false,
                                         //displayField: 'name',
@@ -232,7 +232,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         queryMode: 'local',
                                         //store: 'CountriesForShippers',
                                         //valueField: 'alpha-2',
-                                        multiSelect: false,
+                                        //multiSelect: false,
                                         store: [
                                             ['France','France'],
                                             ['Europe','Europe'],
@@ -240,8 +240,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         ]
                                     })
                                 },
-                                
-                                
+                     
                                
                                 {
                                     xtype: 'gridcolumn',
@@ -484,12 +483,12 @@ Ext.define('Rubedo.view.shippersInterface', {
                                                 ];
         return config;
     },
-    processMyComboBox689: function(config) {
+    processMyComboBox69: function(config) {
         config.store=[
-                    ['France',Rubedo.RubedoAutomatedElementsLoc.FranceText],
-            ['Europe',Rubedo.RubedoAutomatedElementsLoc.EuropeText],
-            ['North America',Rubedo.RubedoAutomatedElementsLoc.AmericaText]
-                ];
+                ['France',Rubedo.RubedoAutomatedElementsLoc.FranceText],
+                ['Europe',Rubedo.RubedoAutomatedElementsLoc.EuropeText],
+                ['North America',Rubedo.RubedoAutomatedElementsLoc.AmericaText]
+            ];
         return config;
     },
 
