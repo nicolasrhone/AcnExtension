@@ -236,7 +236,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         //multiSelect: false,
                                         store: [
                                             ['FR','France'],
-                                            ['EU','Europe'],
+                                            [['FR','DE'],'Europe'],
                                             ['AM','North America']
                                         ]
                                     })
@@ -487,7 +487,7 @@ Ext.define('Rubedo.view.shippersInterface', {
     processMyComboBox69: function(config) {
         config.store=[
                 ['FR',Rubedo.RubedoAutomatedElementsLoc.FRText],
-                ['EU',Rubedo.RubedoAutomatedElementsLoc.EUText],
+                [['FR','DE'],Rubedo.RubedoAutomatedElementsLoc.EUText],
                 ['AM',Rubedo.RubedoAutomatedElementsLoc.AMText]
             ];
         return config;
