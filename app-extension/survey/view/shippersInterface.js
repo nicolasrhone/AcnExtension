@@ -214,8 +214,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                 {
                                     xtype: 'gridcolumn',
                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                        
-                                        try {return(Ext.getStore("states").findRecord("alpha-2",value).get("name"));} catch (err){
+                                        try {return(Ext.getStore("CountriesForShippers").findRecord("alpha-2",value).get("name"));} catch (err){
                                             return value;
                                         }
                                     },
@@ -228,7 +227,7 @@ Ext.define('Rubedo.view.shippersInterface', {
                                         displayField: 'name',
                                         forceSelection: true,
                                         queryMode: 'local',
-                                        store: 'states',
+                                        store: 'CountriesForShippers',
                                         valueField: 'alpha-2',
                                         multiSelect: true
                                     }
@@ -509,14 +508,7 @@ Ext.define('Rubedo.view.shippersInterface', {
     onWorkspacesInterfaceRender: function(component, eOpts) {
         Ext.getStore("Shippers").load();
         Ext.getStore("CountriesForShippers").load();
-        var states = Ext.create('Ext.data.Store', {
-            fields: ['alpha-2', 'name'],
-            data : [
-                {"alpha-2":"AL", "name":"Alabama"},
-                {"alpha-2":"AK", "name":"Alaska"},
-                {"alpha-2":"AZ", "name":"Arizona"}
-            ]
-        });
+        
     },
 
     onWorkspacesInterfaceBeforeClose: function(panel, eOpts) {
